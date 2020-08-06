@@ -1,0 +1,290 @@
+﻿Grid de bootstrap consta de 3 partes
+
+-Contenedor que almacena todo el contenido es el que centra el contenido (container)
+-filas son grupos de columnas horizontales
+-columnas dentro de ellas iran texto,imagenes,botones, etc..
+
+La clase col por default toma el tama;o automatico dependiendo la cantidad de elementos que esten en la fila.
+
+Ejemp.
+col-12  col-6  col-6
+Las columnas tendran siempre abarcaran 12columnas,6columnas,6columnas
+-------------------------------------------------------
+Columnas automaticas.
+col-auto La columna se ajusta al tama;o que necesite dando a referencia si la columna tiene texto entonces la columna se ajusta conforme al texto
+Se puede ajustar con las medidas conocidas
+sm,md,lg,xl
+col-lg-auto
+
+clase w-100
+Puede separar columnas, las trata como si estuvieran en un distinto row
+-------------------------------------------------------
+Columnas alineadas verticalmente
+
+al row la clase align-items-start
+Cada columna solo abarca el espacio que nececita y no el 100% de la fila
+
+align-items-center
+align-items-end
+
+Para alinear columnas independientemente del alineamiento 
+a la columna asignarle estas clases
+align-self-start
+align-self-center
+align-self-end
+-------------------------------------------------------
+Alineacion columnas horizontalmente
+ 
+En el row se coloca justify-content-start  Inicio del row
+                    justify-content-center Centro del row
+                    justify-content-end    Final del row
+
+Reutilizar espacio desperdiciado de las filas en una nueva fila
+
+justify-content-around el espacio lo asigna en toda la fila
+
+justify-content-between el espacio lo asigna al centro de la fila
+
+****Todo esto es en el row en la columna no se aplicarian estas clases
+-----------------------------------------------------------
+offseting 
+Asignarle espaciados a las columnas dentro del row (Izquierda-derecha)
+
+.offset-1 Se agrega un espacio a la izquerda de una columna
+
+*Centrar con offset No recomendada
+<div class="columna col-4 offset-4">Columna</div>
+Como solo se tiene una columna que abarca 4 si le ponemos un offset de 4 espacios, la columna se ira hacia el centro del row
+
+*Resetear offset en ciertos dispositivos
+offset-1 Tamaño pequeño en dispositivos
+
+offset-md-4 Se asigna un offset de 4 espacios cuando el navegador detecta que hay una resolucion media o mas alta
+----------------------------------------------------------------
+
+Ordenamiento de columnas.
+
+*Cambiar el orden de las columnas.
+
+Va del 1-12 columna, tambien se puede adaptar a las medidas de resolucion sm md lg xl
+*order-md-1
+----------------------------------------------------------------
+Columnas Anidadas
+
+<div class="container">
+        <div class="row">
+            <div class="columna col-md-6">
+                Columna 1
+                <div class="row">
+                  <div class="col-2 columna">Columna Anidada1</div>  //Abarcaran dos columnas de la del padre
+                    <div class="col-2 columna">ColumnaAnidada2</div>
+                </div>
+            </div>
+            <div class="columna col-md-6">Columna 2</div>
+        </div>
+  </div>
+---------------------------------------------------------------------------------------------------------------
+Responsive utilities
+
+Ocultar elementos del dom cuando llega a cierta resolución de pixeles.
+
+Clases display:
+d-block //Por defecto en el tamaño extra pequeño en adelante tendra un display block
+
+d-sm-none //El display en un tamaño sm en adelante sera none
+----------------------------------------------------------------------------------------------------------------
+Tipografia
+
+clase 
+container-fluid //Abarca todo el documento y no deja margenes ni el contenido lo centra.
+
+<small></small> Etiqueta para colocar un tamaño de letra más bajo que un encabezado
+Se puede utilizar la clase text-muted para darle un gris ligero
+
+<hr> Se coloca una linea horizontal y tiene clases de bootstrap
+
+*Parrafo con estilo de encabezado
+<p class="h1">Parrafo 1</p>
+
+*Otro tipo de encabezados
+display-1  (1-4)
+(fuente mas ligera, trazos delgados y un poco mas grande a omparacion de un h1
+
+*Parrafos
+<p class="lead"></p> Le agrega un estilo diferente al parrafo como de importacia, sugerido usar en descripciones de imagenes
+
+*A los parrafos se le pueden agregar etiquetas html y bootstrap le añade un estilo al igual que se pueden agregar clases a los parrafos.
+
+*Etiqueta mark subraya el texto que se encierra en la etiqueta
+<p>ejemplo <mark>de</mark></p>
+
+*Etiqueta del tacha el texto que esta dentro de la etiqueta
+<p><del>ejemplo</del></p>
+
+*Etiqueta s hace graficamente lo mismo que del 
+<p><s>ejemplo</s></p>
+
+*Etiqueta ins permite subrayar texto
+<p><ins>ejemplo</ins></p>
+
+*Etiqueta u-referencia a underline permite subrayar texto
+<p><u>ejemplo</u></p>
+
+*Etiqueta small hace que un texto se vuelva pequeño
+<p><small>ejemplo</u></small>
+
+*Etiqueta em
+Hace que el texto tome una fuente italika
+<p><em>ejemplo</u></em>
+
+*Alineacion de texto
+
+Clases:
+text-justify
+text-left
+text-center
+text-right
+
+Los textos tambien se pueden alinear dependiendo la resolucion en pixeles de la pantalla
+
+<p class="text-left text-sm-right">Alineado a la derecha con dispositivos pequeños en adelante</p>
+
+*Cambiar mayusculas a minusculas y viceversa
+
+Clases:
+text-lowercase
+text-uppercase
+text-capitalize
+
+Clases para estilo de fuente
+font-weight-bold
+font-weight-normal
+font-italic
+
+*Estilos a la etiqueta de citas de html
+
+Clases:
+blockquote
+mb-0 //Quita los margenes que tienen los parrafos
+blockquote-footer
+<blockquote>
+                    <p class="mb-o">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, corporis.</p>
+                    <footer class="blockquote-footer"><p>Sebastián Ríos</p></footer>
+                </blockquote>
+-------------------------------------------------------------------------------------------------------------------
+Estilos a los elementos de bloque.
+
+Etiqueta <code></code> sirve para resaltar con un formato de codigo a un texto seleccionado con esa etiqueta.
+
+<code>&lt;text/&gt;</code> = <text/>
+
+<kbd> resalta combinaciones de teclas
+------------------------------------------------Imagenes
+
+no-gutters //Elimina el padding que bootstrap agrega por defecto Se coloca en el row
+
+Imagen a adaptarse al contenedor
+Clase img-fluid //100% del ancho del elemento padre
+
+Imagen a la izquierda-Imagen a la derecha.
+float-left izquierda
+float-right derecha
+
+Clase
+rounded permite esquinas redondeadas en la imagen.
+
+img-thumbnail Permite esquinas redondeadas y le agrega un borde a la imagen
+
+Otro tipo de caja para las imagenes, usadas para poner una imagen con texto abajo
+<figure>
+  <figcaption class="figure-caption">Texto</figcaption>
+</figure>
+------------------------------------------------
+Tablas.
+Clases:
+table.
+//Encabezados en la tabla.
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+//Clases para la tabla
+<!-- .table-dark Nos permite cambiar los colores de la tabla a osucors -->
+				<!-- .table-striped Nos permite alternar colores entre cada fila -->
+				<!-- .table-bordered Nos permite agregarle bordes a la tabla -->
+				<!-- .table-hover Nos permite agregarle un hover a las filas -->
+				<!-- .table-sm Nos permite hacer la tabla mas pequeña eliminando paddings -->
+				<!-- .table-responsive-xx Nos permite adaptar nuestra tabla a dispositivos moviles -->
+
+Clases para la fila.
+	<!-- .table-active -->
+					<!-- .table-success -->
+					<!-- .table-warning -->
+					<!-- .table-danger -->
+					<!-- .table-info -->
+
+<!-- .bg-primary -->
+					<!-- .bg-success -->
+					<!-- .bg-warning -->
+					<!-- .bg-danger -->
+					<!-- .bg-info -->
+--------------------------------------------------------------------------------------------------------------------------
+Media Object.
+Utlizado para diseñar cajas de comentarios, estructuras de red social.
+
+Clase d-flex:
+Clase para la imagen que nos dice que la imagen se comporte con un display flex
+
+Clases para margenes
+mr-3 margin right
+mt-0 margin top
+ml-3 margin left
+-----------------------------------------------------------------------------------------------------------
+Componentes.
+
+Alertas*
+
+Clase alert junto con alert-color, puede tomar los distintos colores de bootstrap success, info, danger, warning
+
+Clase especificamente para los enlaces qu estan dentro de un alert
+
+alert-link: El link toma un color relacionado al del alert
+
+------------------------------------------------------------------
+Insignias-badges
+
+span clase: badge badge-color para darle un color de fondo al spam
+
+badge-pill clase que brinda bordes redondeados al span
+
+*Los badge de igual manera pueden utilizarse en los links
+
+*Los badge de igual manera se pueden utilizar para los botones
+--------------------------------------------------------------------------------------------
+Botones.
+
+Clases: btn btn-color *Boton normal
+
+*Botones outline
+Clase: btn-outline-color
+
+*Tamaños en los botones
+Clases: btn-lg, btn-sm
+
+*Botones de bloque
+clase: btn-block abarcan el 100% de las columnas
+
+*Disabled buttons
+disabled
+
+*Checkbox y radiobuttons como si fueran botones
+
+*Grupos de botones
+clase btn-group btn-group-toggle
+
+data-toggle="buttons"
+-----------------------------------------------------------------------------------------------------------
+Group Buttons.
+
+
